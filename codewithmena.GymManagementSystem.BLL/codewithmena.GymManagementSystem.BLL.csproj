@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\codewithmena.GymManagementSystem.DAL\codewithmena.GymManagementSystem.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
