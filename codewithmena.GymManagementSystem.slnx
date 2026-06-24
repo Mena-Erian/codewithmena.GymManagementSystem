@@ -1,1 +1,5 @@
-<Solution />
+<Solution>
+  <Project Path="codewithmena.GymManagementSystem.BLL/codewithmena.GymManagementSystem.BLL.csproj" Id="9b77d6c2-6b37-4a67-8208-e478466684df" />
+  <Project Path="codewithmena.GymManagementSystem.DAL/codewithmena.GymManagementSystem.DAL.csproj" Id="5ab1af02-205a-4e65-8491-516a859053c6" />
+  <Project Path="codewithmena.GymManagementSystem/codewithmena.GymManagementSystem.PL.csproj" />
+</Solution>
