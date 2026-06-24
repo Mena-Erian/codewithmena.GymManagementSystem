@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\codewithmena.GymManagementSystem.BLL\codewithmena.GymManagementSystem.BLL.csproj" />
+    <ProjectReference Include="..\codewithmena.GymManagementSystem.DAL\codewithmena.GymManagementSystem.DAL.csproj" />
   </ItemGroup>
 
 </Project>
+

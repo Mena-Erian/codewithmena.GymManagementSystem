@@ -1,4 +1,4 @@
-namespace codewithmena.GymManagementSystem.Models
+namespace codewithmena.GymManagementSystem.PL.Models
 {
     public class ErrorViewModel
     {

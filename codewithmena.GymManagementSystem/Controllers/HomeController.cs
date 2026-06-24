@@ -1,8 +1,8 @@
-using codewithmena.GymManagementSystem.Models;
+using codewithmena.GymManagementSystem.PL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace codewithmena.GymManagementSystem.Controllers
+namespace codewithmena.GymManagementSystem.PL.Controllers
 {
     public class HomeController : Controller
     {

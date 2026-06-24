@@ -1,29 +1,27 @@
-using codewithmena.GymManagementSystem.Database.DbContexts;
+using codewithmena.GymManagementSystem.DAL.Contracts.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace codewithmena.GymManagementSystem.Controllers
 {
     public class PlansController : Controller
     {
-        private readonly GymDbContext gymDbContext;
+        private readonly IPlanRepository _planRepository;
 
-        public PlansController()
+        public PlansController(IPlanRepository planRepository)
         {
-         this.gymDbContext = new GymDbContext();
+            _planRepository = planRepository;
         }
+
         public async Task<IActionResult> Index()
-
         {
-            var plans = await gymDbContext.Plans.ToListAsync();
-
+            var plans = await _planRepository.GetAllAsync();
             return View(plans);
         }
 
         // baseUrl/Plans/Details/1
         public async Task<IActionResult> Details(int id)
         {
-            var plan = await gymDbContext.Plans.FindAsync(id);
+            var plan = await _planRepository.GetByIdAsync(id);
             if (plan == null)
             {
                 return RedirectToAction(nameof(Index));
@@ -31,17 +29,18 @@ namespace codewithmena.GymManagementSystem.Controllers
             return View(plan);
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Activate(int id)
         {
-            var plan = await gymDbContext.Plans.FindAsync(id);
+            var plan = await _planRepository.GetByIdAsync(id);
             if (plan != null)
             {
                 plan.IsActive = !plan.IsActive;
-                await gymDbContext.SaveChangesAsync();
+                _planRepository.Update(plan);
+                await _planRepository.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));
         }
     }
 }
+
